@@ -34,7 +34,7 @@ Terminado todo esto reiniciar la ejecución de los contenedores con:
 
 ### `docker-compose restart`
 
-Puedes abrir la aplicacion entrando a [localhost:3000](http://localhost:3000) en tu explorador.
+Esperar a que se levante el docker de frontend y enseguida se puede abrir la aplicacion entrando a [localhost:3000](http://localhost:3000) en tu explorador.
 
 ### `Especificación de archivos correspondientes a cada ejercicio`
 
