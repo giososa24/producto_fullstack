@@ -23,6 +23,7 @@ Una vez finalizado se deben levantar los contenedores con:
 ### `docker-compose up -d`
 
 Para crear la tabla en la base de datos se deberan seguir las instrucciones dentro del pdf dentro de la raíz del proyecto con nombre "Instrucciones para levantar la BD.pdf"
+El usuario y contraseña estan definidos en el archivo "docker-compose.yaml" y son usuario "postgres" y contraseña "pass_test"
 
 ### `A grandes razgos es realizar los siguientes pasos:`
 
