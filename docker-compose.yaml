@@ -1,0 +1,49 @@
+version: "3.7"
+services:
+  backend:
+    build: ./backend .
+    ports: 
+      - "4000:4000"
+    volumes: 
+      - ./backend/:/app
+    environment: 
+      FLASK_ENV: development
+    depends_on: 
+      - db_pg
+    networks: 
+      - backend
+      - frontend
+    container_name: backend
+  
+  db_pg:
+    image: "postgis/postgis"
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass_test
+      POSTGRES_DB: CoordenadasDB
+    networks: 
+      - backend
+    container_name: db_pg
+
+  frontend:
+    #image: node:12-alpine
+    build: ./frontend .
+    volumes: 
+      - ./frontend/:/app
+    working_dir: /app
+    ports: 
+      - "3000:3000"
+    depends_on: 
+      - backend
+    networks: 
+      - frontend
+    command: npm start
+    tty: true
+    container_name: frontend
+
+networks:
+  backend:
+  frontend:
